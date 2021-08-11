@@ -7,12 +7,6 @@ pipeline {
             echo "$GIT_BRANCH"
          }
       }
-      stage('Maven Build') {
-         steps {
-            echo "build"
-            sh 'maven build'
-         }
-      }
       stage('Docker Build') {
          steps {
             sh(script: 'docker images -a')
